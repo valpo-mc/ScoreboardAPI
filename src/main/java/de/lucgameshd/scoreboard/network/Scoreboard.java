@@ -22,13 +22,13 @@ public class Scoreboard {
 
     // Scores
     private long scoreIdCounter = 0;
-    private Long2ObjectMap<ScoreboardLine> scoreboardLines = new Long2ObjectArrayMap<>();
+    private final Long2ObjectMap<ScoreboardLine> scoreboardLines = new Long2ObjectArrayMap<>();
 
     // Viewers
-    private Set<Player> viewers = new HashSet<>();
+    private final Set<Player> viewers = new HashSet<>();
 
     // Displays
-    private Map<DisplaySlot, ScoreboardDisplay> displays = new EnumMap<>( DisplaySlot.class );
+    private final Map<DisplaySlot, ScoreboardDisplay> displays = new EnumMap<>( DisplaySlot.class );
 
     public ScoreboardDisplay addDisplay( DisplaySlot slot, String objectiveName, String displayName ) {
         return this.addDisplay( slot, objectiveName, displayName, SortOrder.ASCENDING );
